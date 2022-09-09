@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+/* metodo de apresentação de escolha */
 void pressBt(){
     cout <<
      "\n  --------------- " "---------------\n"<<
