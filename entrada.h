@@ -6,30 +6,30 @@
 #include <iomanip>
 #include <unistd.h>
 
-#include "tempo.h"
-#include "escolha.h"
+#include "tempo.h"      /* tempo estimado para terminal a votação */
+#include "escolha.h"   /* mensagen confirmar, cancelar */  
 using namespace std;
 
 
 ifstream indata;
 bool pertence_acessao = false;
 
-
+/* Metodo status atual na votação em andamento */
 bool status(bool eleitor){
       int liberar;
       int justificacao;
       int correcao;
    
     cout << "\n--------------------------------------------------";
-    if(eleitor == true){
+    if(eleitor == true){                                       /* eleitor na urna */
         cout << "\nEleitor pronto para votar : \n" ;
-        pressBt();
+        pressBt();                                            /* liberar urna */
      
         cin >> liberar;
         cout << "\n";
         if( liberar == 1){
             cout << "[ + ] - Eleitor Votando\n\n";
-            tempo_votacao_similacao();
+            tempo_votacao_similacao();                     /* tempo estimado para terminal a votação */
             
         }else{
             cout << "[ -  ] - Voto cancelado.\n";
@@ -38,16 +38,16 @@ bool status(bool eleitor){
         }
         
     }else{
-         cout << "\nEleitor não pertencer a essa sessão :  \n";
+         cout << "\nEleitor não pertencer a essa sessão :  \n";  /*eleitor não corresponde a lista de eleitores na sessão */
          pressBt();
          cout << "\n= ";
-         cin >> justificacao;
+         cin >> justificacao;                                  /* justificar  */
          
-         int Temp=0;
+        
             if( justificacao == 1){
                 int justificativa_numero;
                 srand( time(NULL) );
-                justificativa_numero = (( rand() % 33 ) + ( rand() % 33 ) * ( rand() % 33) * ( rand() * 33) * (rand() % 33 )) + 1;
+                justificativa_numero = (( rand() % 33 ) + ( rand() % 33 ) * ( rand() % 33) * ( rand() * 33) * (rand() % 33 )) + 1; /* código de justificação */
                 cout << "--------------------------------------------------\n";
                 cout << "Código = " << abs(justificativa_numero) <<"\n";
                 cout << "--------------------------------------------------\n\n";               
@@ -57,6 +57,7 @@ bool status(bool eleitor){
           return true;
 }
 
+/* Metodo responsavel por identificar eleitor */
 void  terminal(string numero_titulo){
     struct tituloEleitor {
     string nome;
@@ -66,7 +67,7 @@ void  terminal(string numero_titulo){
     string uf;
 
 };
-    indata.open("eleitores.csv");
+    indata.open("eleitores.csv");                             /* eleitores da sessão */
     tituloEleitor *ponteirotituloEleitor = new tituloEleitor;
     string linha;
 
@@ -78,7 +79,7 @@ while (std::getline(indata, linha)) {
     getline(iss, ponteirotituloEleitor->zona, ',');
     getline(iss, ponteirotituloEleitor->uf, ',');
    
-    if(numero_titulo ==  ponteirotituloEleitor->titulo){
+    if(numero_titulo ==  ponteirotituloEleitor->titulo){     /* Eleitor pertence a sessão... */
         cout << "\n" << ponteirotituloEleitor->nome << "  " << ponteirotituloEleitor->titulo;
         cout << "\nSessão : " << ponteirotituloEleitor->sessao << "\nZona : " << ponteirotituloEleitor->zona  << "\nUf : " << ponteirotituloEleitor->uf;
         pertence_acessao = true;
@@ -87,6 +88,6 @@ while (std::getline(indata, linha)) {
     
     
 }
-   status(pertence_acessao);
+   status(pertence_acessao); /* verifica se pertence */
 
 }
