@@ -11,6 +11,9 @@ using namespace std;
 void limpa(){
      system("clear");  
 }
+
+
+/* informativo de voto em andamento */
 void tempovotacao(int hr, int minutos, int segundos) {
    
    cout << "Eleitor Votando "<<
@@ -21,7 +24,7 @@ void tempovotacao(int hr, int minutos, int segundos) {
        
 }
 
-
+/* metodo detempo estimado para votação */
 void tempo_votacao_similacao(){
 
 int hr =0;
@@ -45,7 +48,7 @@ while(coontagem) {
       min = 0;
       
     }
-    if (sec == 7) {
+    if (sec == 7) {                                        /* modelo minimo, de tempo ultrapassado */
     cout <<"Eleitor  esta demorando\n" <<
  
      "\n  --------------- " "---------------\n"<<
@@ -55,7 +58,7 @@ while(coontagem) {
       "2- corrigir\n";
       cin >> confirmar;
 
-      if(confirmar == 1){
+      if(confirmar == 1){                               /* messário dispoem para ajuda e informa que esta demorando e se esta precisando de auxilio */
         continue;
 
       }
@@ -63,16 +66,16 @@ while(coontagem) {
    
     }
 
-     if(sec ==15){
+     if(sec ==15){                                    /* tempo adicionar */
      cout <<"Eleitor esta demorando\n\n" <<
      "\n  --------------- " "---------------\n"<<
       "/  CONFIRMAR   /" << "/  CORRIGIR   /" << "\n" <<
        "--------------- "<<  "---------------\n"<<
       "1- confirmar\n"<<
       "2- corrigir\n";
-      cin >> confirmar;
+      cin >> confirmar;                                /* na circunstancias o eleitor sai da cabine ou não sabe mais e quer se abdicar da escolha */
       if(confirmar == 2){
-         cout <<"Digite o código de suspensão\n\n: ";
+         cout <<"Digite o código de suspensão\n\n: ";  /* gerar suspensão parcial do voto */   
          cin >> corrigir;
          if(corrigir == CODIGO){
              cout <<"[ !! ] - Voto Parcial..\n\n : ";
@@ -82,13 +85,13 @@ while(coontagem) {
          }
 
       }else {
-        cout <<"[ !! ] - Voto concluido..\n\n : ";
+        cout <<"[ !! ] - Voto concluido..\n\n : ";   /* ocorreu tudo bem, eleitor terminou e não houve cancelamento ou suspensssão */
         coontagem= false;
       }
      }
         
     
-    tempovotacao(hr, min, sec);
+    tempovotacao(hr, min, sec);                 /* mensagem de tempo passando */
     sleep(2);
     system("clear");  
    
