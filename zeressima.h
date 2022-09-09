@@ -11,9 +11,9 @@ string cadidato[L][C];
 
 ofstream gravar;
 
-
+/* Meotodo responsavel por mostrar que não há votos predeterminados antes de iniciar as votações */
  void parlamentares(){
-      cadidato[0][0] = "Candidato X";
+      cadidato[0][0] = "Candidato X";               /* Modelo; nome,partido cargo, voto atual, numero do candidato */
       cadidato[0][1] = "partido X";
       cadidato[0][2] = "Presidente da República";
       cadidato[0][3] = "voto : 0 ";
@@ -53,7 +53,7 @@ void zeressima(string cadidato[L][C]){
     
     for(int l=0; l < L ;l++){
              for(int c=0; c < C ;c++){
-                if (c ==0 || c ==2 || c ==3 || c ==4){
+                if (c ==0 || c ==2 || c ==3 || c ==4){   /* informação simplificada */
                     gravar << cadidato[l][0] << " , " << cadidato[l][2] << " , " <<cadidato[l][4] <<"  , " << cadidato[l][3] << endl;
                     break;
                    
