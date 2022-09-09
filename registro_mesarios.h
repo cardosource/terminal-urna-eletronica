@@ -2,13 +2,16 @@
 #include <string>
 
 using namespace std;
-string mesarios[4][2];
+string mesarios[4][2];                           /* quantidade de messarios, função e titulo*/
+
+
+/* metodo sem retorno apenas registros */
 void registro_mesarios(){
     int confirmar;
     string titulo_mesario;
     
-    mesarios[0][0]= "Presidente ";
-    mesarios[0][1]= "_ _ _ _ _ _";
+    mesarios[0][0]= "Presidente ";              /* cargo */
+    mesarios[0][1]= "_ _ _ _ _ _";             /* titulo  */
 
     mesarios[1][0]= "Primeiro Mesário ";
     mesarios[1][1]= "_ _ _ _ _ _";
@@ -27,10 +30,10 @@ void registro_mesarios(){
        
          
         if(c ==1){
-            cout << "Informe o titulo : "<< mesarios[l][0] << "\n: ";
+            cout << "Informe o titulo : "<< mesarios[l][0] << "\n: "; /* mensagem informativa */
             
-            cin >> titulo_mesario;
-                mesarios[l][c] =titulo_mesario;
+            cin >> titulo_mesario;                                   /*entrada */
+                mesarios[l][c] =titulo_mesario;                      /* adiciona valor */
             
             
            
