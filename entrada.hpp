@@ -6,8 +6,8 @@
 #include <iomanip>
 #include <unistd.h>
 
-#include "tempo.h"      /* tempo estimado para terminal a votação */
-#include "escolha.h"   /* mensagen confirmar, cancelar */  
+#include "tempo.hpp"      /* tempo estimado para terminal a votação */
+#include "escolha.hpp"   /* mensagen confirmar, cancelar */  
 using namespace std;
 
 
