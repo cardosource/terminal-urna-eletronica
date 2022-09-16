@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 
-#include "digite.h"                /* Entrada padrão e mascara do campo titulo  */
-#include "entrada.h"              /* Responsavel pela identificação dos eleitores  */
-#include "zeressima.h"           /* imprima todos candidatos, sem nenhum voto   */
-#include "registro_mesarios.h"  /* Arquivo de registro de messarios  */
+#include "digite.hpp"                /* Entrada padrão e mascara do campo titulo  */
+#include "entrada.hpp"              /* Responsavel pela identificação dos eleitores  */
+#include "zeressima.hpp"           /* imprima todos candidatos, sem nenhum voto   */
+#include "registro_mesarios.hpp"  /* Arquivo de registro de messarios  */
 
 #define SECAO 234               /* Sessão modelo  */
 #define ZONA 123               /* Zona eleitoral  */
