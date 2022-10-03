@@ -12,9 +12,7 @@ Terminal do messario
 - Registrar Justificativa; quando um eleitor esta longe da sua zona de votação.
 - Imprimir Boletim de Urna, com todos os votos daquela sessão.
 
-Algoritimo faz esse processo inicial de pre votação, antes do eleitor ir para a cabine de votação.
-Utilizando linguagem de programação c++.
-Código exemplo.
+
 
 
 
