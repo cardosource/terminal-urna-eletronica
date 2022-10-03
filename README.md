@@ -21,10 +21,5 @@ Código exemplo.
 
 
 
-Terminal:
-
-
-![Logo](https://img.comunidades.net/mei/meira/urna_eletronica_02__terminal_do_mesario.jpg)
-
 
 
