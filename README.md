@@ -28,6 +28,3 @@ Terminal:
 
 
 
-
-![](https://img.shields.io/badge/c%2B%2B-gcc%20version%209.4.0-blue)![GitHub](https://img.shields.io/badge/licence-GPL%203.0-GREE)
-
